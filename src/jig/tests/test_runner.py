@@ -91,7 +91,7 @@ class TestRunnerFromHook(RunnerTestCase, PluginTestCase):
 
         # The user was prompted about committing or canceling
         ri.assert_called_once_with(
-            '\nCommit anyway (hit "c"), or stop (hit "s"): ')
+            '\nCommit anyway (hit "c"), or stop [MUST stop before modifications!] (hit "s"): ')
         # When they said cancel we exited with non-zero
         r_sys.exit.assert_called_once_with(1)
 
@@ -117,7 +117,7 @@ class TestRunnerFromHook(RunnerTestCase, PluginTestCase):
 
         # The user was prompted about committing or canceling
         ri.assert_called_once_with(
-            '\nCommit anyway (hit "c"), or stop (hit "s"): ')
+            '\nCommit anyway (hit "c"), or stop [MUST stop before modifications!] (hit "s"): ')
         # When they said cancel we exited with non-zero
         r_sys.exit.assert_called_once_with(0)
 

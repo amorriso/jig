@@ -62,7 +62,7 @@ class Runner(object):
             while True:
                 try:
                     answer = raw_input(
-                        '\nCommit anyway (hit "c"), or stop (hit "s"): ')
+                        '\nCommit anyway (hit "c"), or stop [MUST stop before modifications!] (hit "s"): ')
                 except KeyboardInterrupt:
                     sys.exit(1)
                 if answer and answer[0].lower() == 's':
